@@ -8,6 +8,21 @@ body, html {
   background-attachment: fixed;
 }
 
+.contact-text {
+  float: right;
+  font-size: max(1.2vw, 15px);
+  font-family: "Maven Pro", sans-serif;
+  overflow: hidden;
+  margin-left: 50px;
+  width: 700px;
+}
+
+.contact-icon {
+  margin-right: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+}
+
 .logo {
   margin-left: 15px;
   margin-top: 15px;
@@ -126,6 +141,25 @@ body, html {
 }
 .github-container .github-icon:hover {
   transform: scale(1.2);
+}
+
+.copyright-container {
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  z-index: 1;
+}
+.copyright-container .copyright {
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: max(0.5vw, 15px);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-family: "Maven Pro", sans-serif;
 }
 
 .github-text {
