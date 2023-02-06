@@ -1,0 +1,304 @@
+
+$font-primary: 'Maven Pro', sans-serif;
+$white: rgba(255, 255, 255, 0.7);
+$github-grey: rgba(107, 107, 107, 1);
+
+$purple: rgba(124, 108, 188, 1);
+
+$gradient-dark-purple: rgba(94, 52, 235, 1);
+$graidient-light-purple: rgba(150, 124, 235);
+
+body, html {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    scroll-behavior: smooth;
+    background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+    //background-image: linear-gradient(to bottom, $gradient-dark-purple, $graidient-light-purple)
+    background-attachment: fixed;
+}
+
+.logo {
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 50px;
+    position: fixed;
+}
+
+.icon {
+    font-size: 30px;
+    width: 50px;
+    position: fixed;
+    color: $white;
+
+    &:hover {
+        color: $purple;
+    }
+}
+
+.header-icon {
+    margin-left: 22px;
+    margin-top: 100px;
+}
+
+.about-me-icon {
+    margin-left: 25px;
+    margin-top: 150px;
+}
+
+.games-icon {
+    margin-top: 200px;
+    margin-left: 19px;
+}
+
+.code-icon {
+    margin-top: 250px;
+    margin-left: 19px;
+}
+
+.website-icon {
+    margin-top: 300px;
+    margin-left: 22px;
+}
+
+.back-arrow-container {
+    margin-left: 15px;
+    margin-top: 15px;
+    
+    .back-arrow {
+        color: $white;
+        font-size: max(2vw, 20px);
+        text-decoration: none;
+        font-family: $font-primary;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            transform: scale(1.2);
+            color: $purple;
+        }
+    }
+}
+
+.arrow-container {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+
+    .down-icon {
+        bottom: 0;
+        right: 0;
+        color: $white;
+        font-size: max(2vw, 20px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            transform: scale(1.2);
+            color: $purple;
+        }
+    }
+}
+
+.next-page-arrow {
+        color: $white;
+        font-size: max(2vw, 20px);
+
+        &:hover {
+            color: $purple;
+        }
+}
+
+.next-page-arrow-games {
+    color: $white;
+    font-size: max(1vw, 15px);
+
+    &:hover {
+        color: $purple;
+    }
+}
+
+.github-container {
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    z-index: 1;
+
+    .github-icon {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        color: $white;
+        font-size: max(2vw, 20px);
+        margin-left: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.github-text {
+    font-weight: bolder;
+    font-size: max(6vw, 35px);
+}
+
+
+.unity-main-menu-text {
+    margin-top: 250px;
+}
+
+// All sections
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    color: white;
+    justify-content: flex-start;
+}
+
+// Content titles
+.title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 600px;
+
+    .section-title {
+        margin: 10px;
+        font-size: 50px;
+        font-family: $font-primary;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 600px;
+        text-decoration:solid;
+    }
+}
+
+.section-text {
+    float: right;
+    font-size: max(1vw, 15px);
+    font-family: $font-primary;
+    overflow: hidden;
+    margin-left: 50px;
+    
+    width: 50%;
+}
+
+.section-image {
+    width: max(20vw, 200px);
+    height: auto;
+    border: 2px solid #fff;
+    -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
+}
+
+.cambot-image, .mobcontracts-image {
+    width: max(20vw, 200px);
+    height: auto;
+}
+
+.other-image {
+    width: max(12vw, 200px);
+    height: auto;
+}
+
+.jess-image {
+    width: max(22vw, 200px);
+    height: auto;
+    border: 2px solid #fff;
+    -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
+}
+
+.pesky-image {
+    width: max(30vw, 200px);
+    height: auto;
+    border: 2px solid #fff;
+    -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+// All centered content
+.centered {
+    margin: auto;
+    margin-left: 500px;
+}
+
+// Github link
+.github-link {
+    text-decoration: none;
+    color: white;
+    font-family: $font-primary;
+    font-weight: bolder;
+
+    &:hover {
+        color: rgba(106, 106, 106, 1);
+    }
+}
+
+.header-section {
+    //background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+    //background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    color: white;
+
+    .banner-content {
+        margin: auto;
+        .banner-title {
+            font-family: $font-primary;
+            font-weight: bolder;
+            text-align: center;
+            // 5.5
+            font-size: max(4vw, 30px);
+            letter-spacing: 0.1vw;
+            margin-top: -4rem;
+        }
+
+        .banner-subtitle {
+
+            font-family: $font-primary;
+            font-size: max(1vw, 9px);
+            margin-top: -4vw;
+            margin-bottom: 5vw;
+            color: hsl(0, 0%, 95%);
+            font-weight: bolder;
+        }
+    }
+}
