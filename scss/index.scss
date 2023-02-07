@@ -1,4 +1,6 @@
 
+// As well as mobile, create one for tablet
+
 $font-primary: 'Maven Pro', sans-serif;
 $white: rgba(255, 255, 255, 0.7);
 $github-grey: rgba(107, 107, 107, 1);
@@ -8,38 +10,40 @@ $purple: rgba(124, 108, 188, 1);
 $gradient-dark-purple: rgba(94, 52, 235, 1);
 $graidient-light-purple: rgba(150, 124, 235);
 
+// Breakpoint variables
+$breakpoint-mobile-width: 1000px;
+
+// main
 body, html {
     border: 0;
     margin: 0;
     padding: 0;
     width: 100vw;
     scroll-behavior: smooth;
-    background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
-    //background-image: linear-gradient(to bottom, $gradient-dark-purple, $graidient-light-purple)
-    background-attachment: fixed;
+    //background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+
+    @media (max-width: $breakpoint-mobile-width){
+        background-color: rgba(44, 44, 44);
+    }
+
+    @media (min-width: $breakpoint-mobile-width){
+        background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+        background-attachment: fixed;
+    }
 }
 
-.contact-text {
-    float: right;
-    font-size: max(1.2vw, 15px);
-    font-family: $font-primary;
-    overflow: hidden;
-    margin-left: 50px;
-    
-    width: 700px;
-}
-
-.contact-icon {
-    margin-right: 5px;
-    color: $white;
-    font-size: 20px;
-}
+// "Navbar" icons
 
 .logo {
     margin-left: 15px;
     margin-top: 15px;
     width: 50px;
     position: fixed;
+
+    @media (max-width: $breakpoint-mobile-width){
+        width: 30px;
+        position: sticky;
+    }
 }
 
 .icon {
@@ -50,6 +54,12 @@ body, html {
 
     &:hover {
         color: $purple;
+    }
+
+    @media (max-width: $breakpoint-mobile-width){
+        //font-size: 20px;
+        //width: 30px;
+        visibility: hidden;
     }
 }
 
@@ -83,6 +93,191 @@ body, html {
     margin-left: 22px;
 }
 
+// Main styles
+
+// All sections
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    color: white;
+    justify-content: flex-start;
+
+    @media (max-width: $breakpoint-mobile-width){
+        height: 50%;
+    }
+}
+
+.section-text {
+    float: right;
+    font-size: max(1vw, 15px);
+    font-family: $font-primary;
+    overflow: hidden;
+    margin-left: 50px;
+    
+    width: 50%;
+
+    @media (max-width: $breakpoint-mobile-width){
+        //margin-left: 10px;
+        //margin-right: 10px;
+        margin: auto;
+        margin-top: 10px;
+        width: 90%;
+    }
+}
+
+.section-image {
+    width: max(20vw, 200px);
+    height: auto;
+    border: 2px solid #fff;
+    -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
+
+    @media (max-width: $breakpoint-mobile-width){
+        //margin-left: 20%;
+        margin: auto;
+    }
+}
+
+.centered {
+    margin: auto;
+    margin-left: 500px;
+
+    @media (max-width: $breakpoint-mobile-width){
+        margin-left: 10px;
+    }
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: $breakpoint-mobile-width){
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.title-container {
+
+    @media (max-width: $breakpoint-mobile-width){
+        visibility: hidden;
+        width: 0px;
+    }
+    
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 600px;
+
+    .section-title {
+        margin: 10px;
+        font-size: 50px;
+        font-family: $font-primary;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 600px;
+        text-decoration:solid;
+
+        @media (max-width: $breakpoint-mobile-width){
+            visibility: hidden;
+            width: 0px;
+        }
+    }
+}
+
+// Header
+.header-section {
+    //background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+    //background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    color: white;
+
+    .banner-content {
+        margin: auto;
+        .banner-title {
+            font-family: $font-primary;
+            font-weight: bolder;
+            text-align: center;
+            // 5.5
+            font-size: max(4vw, 30px);
+            letter-spacing: 0.1vw;
+            margin-top: -4rem;
+        }
+
+        .banner-subtitle {
+
+            font-family: $font-primary;
+            font-size: max(1vw, 9px);
+            margin-top: -4vw;
+            margin-bottom: 5vw;
+            color: hsl(0, 0%, 95%);
+            font-weight: bolder;
+        }
+    }
+}
+
+// about me 
+.about-me-text {
+    float: right;
+    font-size: max(1vw, 15px);
+    font-family: $font-primary;
+    overflow: hidden;
+    margin-left: 50px;
+    
+    width: 50%;
+
+    @media (max-width: $breakpoint-mobile-width){
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 90%;
+    }
+}
+
+// contact
+
+.contact-text {
+    float: right;
+    font-size: max(1.2vw, 15px);
+    font-family: $font-primary;
+    overflow: hidden;
+    margin-left: 50px;
+    margin: auto;
+    
+
+    @media (max-width: $breakpoint-mobile-width){
+        width: 200px;
+        float: none;
+    }
+    
+}
+
+.contact-container {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+
+.contact-centered {
+    margin: auto;
+}
+
+
+
 .back-arrow-container {
     margin-left: 15px;
     margin-top: 15px;
@@ -110,6 +305,10 @@ body, html {
     display: flex;
     justify-content: center;
 
+    @media (max-width: $breakpoint-mobile-width){
+        visibility: hidden;
+    }
+
     .down-icon {
         bottom: 0;
         right: 0;
@@ -134,6 +333,29 @@ body, html {
         &:hover {
             color: $purple;
         }
+
+        @media (max-width: $breakpoint-mobile-width){
+            margin: auto;
+            font-size: 40px;
+        }
+
+        @media (min-width: $breakpoint-mobile-width){
+            visibility: hidden;
+        }
+}
+
+.next-page-arrow-p {
+    color: $white;
+    font-size: max(2vw, 20px);
+
+    &:hover {
+        color: $purple;
+    }
+
+    @media (max-width: $breakpoint-mobile-width){
+        margin: auto;
+        visibility: hidden;
+    }
 }
 
 .next-page-arrow-games {
@@ -146,6 +368,12 @@ body, html {
 }
 
 .github-container {
+
+    @media (max-width: $breakpoint-mobile-width){
+        display: none;
+        height: 0px;
+    }
+    
     bottom: 0;
     left: 0;
     width: 100vw;
@@ -170,6 +398,11 @@ body, html {
 }
 
 .copyright-container {
+
+    @media (max-width: $breakpoint-mobile-width){
+        visibility: hidden;
+    }
+
     bottom: 0;
     left: 0;
     width: 100vw;
@@ -189,6 +422,22 @@ body, html {
     }
 }
 
+.responsive-copyright-container {
+    bottom: 0;
+    width: 100vw;
+    height: 10px;
+    z-index: 1;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    .responsive-copyright {
+        font-family: $font-primary;
+        color: $white;
+        bottom: 0;
+    }
+}
+
 .github-text {
     font-weight: bolder;
     font-size: max(6vw, 35px);
@@ -199,58 +448,7 @@ body, html {
     margin-top: 250px;
 }
 
-// All sections
-.section {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    color: white;
-    justify-content: flex-start;
-}
 
-// Content titles
-.title-container {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    width: 600px;
-
-    .section-title {
-        margin: 10px;
-        font-size: 50px;
-        font-family: $font-primary;
-        color: white;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        width: 600px;
-        text-decoration:solid;
-    }
-}
-
-.section-text {
-    float: right;
-    font-size: max(1vw, 15px);
-    font-family: $font-primary;
-    overflow: hidden;
-    margin-left: 50px;
-    
-    width: 50%;
-}
-
-.section-image {
-    width: max(20vw, 200px);
-    height: auto;
-    border: 2px solid #fff;
-    -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
-    -moz-border-radius:25px;
-    -webkit-border-radius:25px;
-    border-radius:25px;
-}
 
 .cambot-image, .mobcontracts-image {
     width: max(20vw, 200px);
@@ -286,17 +484,7 @@ body, html {
     border-radius:25px;
 }
 
-.container {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-}
 
-// All centered content
-.centered {
-    margin: auto;
-    margin-left: 500px;
-}
 
 // Github link
 .github-link {
@@ -307,39 +495,5 @@ body, html {
 
     &:hover {
         color: rgba(106, 106, 106, 1);
-    }
-}
-
-.header-section {
-    //background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
-    //background-color: black;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    color: white;
-
-    .banner-content {
-        margin: auto;
-        .banner-title {
-            font-family: $font-primary;
-            font-weight: bolder;
-            text-align: center;
-            // 5.5
-            font-size: max(4vw, 30px);
-            letter-spacing: 0.1vw;
-            margin-top: -4rem;
-        }
-
-        .banner-subtitle {
-
-            font-family: $font-primary;
-            font-size: max(1vw, 9px);
-            margin-top: -4vw;
-            margin-bottom: 5vw;
-            color: hsl(0, 0%, 95%);
-            font-weight: bolder;
-        }
     }
 }
