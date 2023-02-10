@@ -1,7 +1,10 @@
 
 // As well as mobile, create one for tablet
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
 $font-primary: 'Maven Pro', sans-serif;
+$font-secondary: 'Source Code Pro', monospace;
 $white: rgba(255, 255, 255, 0.7);
 $github-grey: rgba(107, 107, 107, 1);
 
@@ -23,22 +26,42 @@ body, html {
     //background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
 
     @media (max-width: $breakpoint-mobile-width){
-        background-color: rgba(44, 44, 44);
+        //background-color: rgba(44, 44, 44);
+        background: url(https://user-images.githubusercontent.com/78669960/217993410-e9bdbbfd-b288-4d9b-bd3d-3d6006024669.png) center center/cover no-repeat;
+        background-attachment: fixed;
     }
 
     @media (min-width: $breakpoint-mobile-width){
-        background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+        //background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+        background: url(https://user-images.githubusercontent.com/78669960/217637906-1963acd4-04d3-4ffb-9cda-50f32fd58eb0.png) center center/cover no-repeat;
         background-attachment: fixed;
     }
 }
 
 // "Navbar" icons
 
+.navbar-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 80px; // 80px
+    background-color: rgba(37, 42, 46, 1);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 0;
+
+    @media (max-width: $breakpoint-mobile-width){
+        display: none;
+    }
+}
+
 .logo {
     margin-left: 15px;
     margin-top: 15px;
     width: 50px;
     position: fixed;
+    z-index: 2;
 
     @media (max-width: $breakpoint-mobile-width){
         width: 30px;
@@ -51,9 +74,11 @@ body, html {
     width: 50px;
     position: fixed;
     color: $white;
+    transition: 200ms ease-in-out;
 
     &:hover {
         color: $purple;
+        transform: scale(0.95);
     }
 
     @media (max-width: $breakpoint-mobile-width){
@@ -92,6 +117,15 @@ body, html {
     margin-top: 350px;
     margin-left: 22px;
 }
+
+.github-icon {
+    bottom: 0;
+    left: 0;
+    margin-left: 22px;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
 
 // Main styles
 
@@ -180,7 +214,7 @@ body, html {
     .section-title {
         margin: 10px;
         font-size: 50px;
-        font-family: $font-primary;
+        font-family: $font-secondary;
         color: white;
         display: flex;
         align-items: center;
@@ -192,6 +226,102 @@ body, html {
             visibility: hidden;
             width: 0px;
         }
+    }
+}
+
+// Arrows
+
+.back-arrow-container {
+    margin-left: 15px;
+    margin-top: 15px;
+    position: fixed;
+    
+    .back-arrow {
+        color: $white;
+        font-size: 30px;
+        text-decoration: none;
+        font-family: $font-primary;
+        cursor: pointer;
+        z-index: 1;
+        transition: 100ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+            color: $purple;
+        }
+    }
+}
+
+.arrow-container {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $breakpoint-mobile-width){
+        visibility: hidden;
+    }
+
+    .down-icon {
+        bottom: 0;
+        right: 0;
+        color: $white;
+        font-size: max(2vw, 20px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        z-index: 1;
+        transition: 100ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+            color: $purple;
+        }
+    }
+}
+
+.next-page-arrow {
+        color: $white;
+        font-size: max(2vw, 20px);
+
+        transition: 100ms ease-in-out;
+
+        &:hover {
+            color: $purple;
+        }
+
+        @media (max-width: $breakpoint-mobile-width){
+            margin: auto;
+            font-size: 40px;
+        }
+
+        @media (min-width: $breakpoint-mobile-width){
+            visibility: hidden;
+        }
+}
+
+.next-page-arrow-p {
+    color: $white;
+    font-size: max(2vw, 20px);
+
+    &:hover {
+        color: $purple;
+    }
+
+    @media (max-width: $breakpoint-mobile-width){
+        margin: auto;
+        visibility: hidden;
+    }
+}
+
+.next-page-arrow-games {
+    color: $white;
+    font-size: max(1vw, 15px);
+
+    &:hover {
+        color: $purple;
     }
 }
 
@@ -220,7 +350,7 @@ body, html {
 
         .banner-subtitle {
 
-            font-family: $font-primary;
+            font-family: $font-secondary;
             font-size: max(1vw, 9px);
             margin-top: -4vw;
             margin-bottom: 5vw;
@@ -275,128 +405,6 @@ body, html {
 .contact-centered {
     margin: auto;
 }
-
-
-
-.back-arrow-container {
-    margin-left: 15px;
-    margin-top: 15px;
-    
-    .back-arrow {
-        color: $white;
-        font-size: max(2vw, 20px);
-        text-decoration: none;
-        font-family: $font-primary;
-        cursor: pointer;
-        z-index: 1;
-
-        &:hover {
-            transform: scale(1.2);
-            color: $purple;
-        }
-    }
-}
-
-.arrow-container {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-
-    @media (max-width: $breakpoint-mobile-width){
-        visibility: hidden;
-    }
-
-    .down-icon {
-        bottom: 0;
-        right: 0;
-        color: $white;
-        font-size: max(2vw, 20px);
-        margin-right: 20px;
-        margin-bottom: 20px;
-        cursor: pointer;
-        z-index: 1;
-
-        &:hover {
-            transform: scale(1.2);
-            color: $purple;
-        }
-    }
-}
-
-.next-page-arrow {
-        color: $white;
-        font-size: max(2vw, 20px);
-
-        &:hover {
-            color: $purple;
-        }
-
-        @media (max-width: $breakpoint-mobile-width){
-            margin: auto;
-            font-size: 40px;
-        }
-
-        @media (min-width: $breakpoint-mobile-width){
-            visibility: hidden;
-        }
-}
-
-.next-page-arrow-p {
-    color: $white;
-    font-size: max(2vw, 20px);
-
-    &:hover {
-        color: $purple;
-    }
-
-    @media (max-width: $breakpoint-mobile-width){
-        margin: auto;
-        visibility: hidden;
-    }
-}
-
-.next-page-arrow-games {
-    color: $white;
-    font-size: max(1vw, 15px);
-
-    &:hover {
-        color: $purple;
-    }
-}
-
-.github-container {
-
-    @media (max-width: $breakpoint-mobile-width){
-        display: none;
-        height: 0px;
-    }
-    
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 60px;
-    position: fixed;
-    z-index: 1;
-
-    .github-icon {
-        bottom: 0;
-        left: 0;
-        position: fixed;
-        color: $white;
-        font-size: max(2vw, 20px);
-        margin-left: 10px;
-        margin-bottom: 10px;
-        cursor: pointer;
-
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
-}
-
 .copyright-container {
 
     @media (max-width: $breakpoint-mobile-width){
@@ -408,7 +416,7 @@ body, html {
     width: 100vw;
     height: 60px;
     position: fixed;
-    z-index: 1;
+    z-index: 0f;
 
     .copyright {
         bottom: 0;

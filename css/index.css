@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
 body, html {
   border: 0;
   margin: 0;
@@ -7,13 +8,31 @@ body, html {
 }
 @media (max-width: 1000px) {
   body, html {
-    background-color: rgb(44, 44, 44);
+    background: url(https://user-images.githubusercontent.com/78669960/217993410-e9bdbbfd-b288-4d9b-bd3d-3d6006024669.png) center center/cover no-repeat;
+    background-attachment: fixed;
   }
 }
 @media (min-width: 1000px) {
   body, html {
-    background: url(https://user-images.githubusercontent.com/78669960/168137576-2b24171f-bdb8-4b60-91c8-6dffb3472dd2.png) center center/cover no-repeat;
+    background: url(https://user-images.githubusercontent.com/78669960/217637906-1963acd4-04d3-4ffb-9cda-50f32fd58eb0.png) center center/cover no-repeat;
     background-attachment: fixed;
+  }
+}
+
+.navbar-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 80px;
+  background-color: rgb(37, 42, 46);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+@media (max-width: 1000px) {
+  .navbar-container {
+    display: none;
   }
 }
 
@@ -22,6 +41,7 @@ body, html {
   margin-top: 15px;
   width: 50px;
   position: fixed;
+  z-index: 2;
 }
 @media (max-width: 1000px) {
   .logo {
@@ -35,9 +55,11 @@ body, html {
   width: 50px;
   position: fixed;
   color: rgba(255, 255, 255, 0.7);
+  transition: 200ms ease-in-out;
 }
 .icon:hover {
   color: rgb(124, 108, 188);
+  transform: scale(0.95);
 }
 @media (max-width: 1000px) {
   .icon {
@@ -73,6 +95,14 @@ body, html {
 .contact-icon {
   margin-top: 350px;
   margin-left: 22px;
+}
+
+.github-icon {
+  bottom: 0;
+  left: 0;
+  margin-left: 22px;
+  margin-bottom: 10px;
+  z-index: 2;
 }
 
 .section {
@@ -160,7 +190,7 @@ body, html {
 .title-container .section-title {
   margin: 10px;
   font-size: 50px;
-  font-family: "Maven Pro", sans-serif;
+  font-family: "Source Code Pro", monospace;
   color: white;
   display: flex;
   align-items: center;
@@ -173,6 +203,96 @@ body, html {
     visibility: hidden;
     width: 0px;
   }
+}
+
+.back-arrow-container {
+  margin-left: 15px;
+  margin-top: 15px;
+  position: fixed;
+}
+.back-arrow-container .back-arrow {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 30px;
+  text-decoration: none;
+  font-family: "Maven Pro", sans-serif;
+  cursor: pointer;
+  z-index: 1;
+  transition: 100ms ease-in-out;
+}
+.back-arrow-container .back-arrow:hover {
+  transform: scale(1.2);
+  color: rgb(124, 108, 188);
+}
+
+.arrow-container {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  .arrow-container {
+    visibility: hidden;
+  }
+}
+.arrow-container .down-icon {
+  bottom: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: max(2vw, 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  z-index: 1;
+  transition: 100ms ease-in-out;
+}
+.arrow-container .down-icon:hover {
+  transform: scale(1.2);
+  color: rgb(124, 108, 188);
+}
+
+.next-page-arrow {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: max(2vw, 20px);
+  transition: 100ms ease-in-out;
+}
+.next-page-arrow:hover {
+  color: rgb(124, 108, 188);
+}
+@media (max-width: 1000px) {
+  .next-page-arrow {
+    margin: auto;
+    font-size: 40px;
+  }
+}
+@media (min-width: 1000px) {
+  .next-page-arrow {
+    visibility: hidden;
+  }
+}
+
+.next-page-arrow-p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: max(2vw, 20px);
+}
+.next-page-arrow-p:hover {
+  color: rgb(124, 108, 188);
+}
+@media (max-width: 1000px) {
+  .next-page-arrow-p {
+    margin: auto;
+    visibility: hidden;
+  }
+}
+
+.next-page-arrow-games {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: max(1vw, 15px);
+}
+.next-page-arrow-games:hover {
+  color: rgb(124, 108, 188);
 }
 
 .header-section {
@@ -195,7 +315,7 @@ body, html {
   margin-top: -4rem;
 }
 .header-section .banner-content .banner-subtitle {
-  font-family: "Maven Pro", sans-serif;
+  font-family: "Source Code Pro", monospace;
   font-size: max(1vw, 9px);
   margin-top: -4vw;
   margin-bottom: 5vw;
@@ -245,127 +365,13 @@ body, html {
   margin: auto;
 }
 
-.back-arrow-container {
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.back-arrow-container .back-arrow {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: max(2vw, 20px);
-  text-decoration: none;
-  font-family: "Maven Pro", sans-serif;
-  cursor: pointer;
-  z-index: 1;
-}
-.back-arrow-container .back-arrow:hover {
-  transform: scale(1.2);
-  color: rgb(124, 108, 188);
-}
-
-.arrow-container {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-}
-@media (max-width: 1000px) {
-  .arrow-container {
-    visibility: hidden;
-  }
-}
-.arrow-container .down-icon {
-  bottom: 0;
-  right: 0;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: max(2vw, 20px);
-  margin-right: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-.arrow-container .down-icon:hover {
-  transform: scale(1.2);
-  color: rgb(124, 108, 188);
-}
-
-.next-page-arrow {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: max(2vw, 20px);
-}
-.next-page-arrow:hover {
-  color: rgb(124, 108, 188);
-}
-@media (max-width: 1000px) {
-  .next-page-arrow {
-    margin: auto;
-    font-size: 40px;
-  }
-}
-@media (min-width: 1000px) {
-  .next-page-arrow {
-    visibility: hidden;
-  }
-}
-
-.next-page-arrow-p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: max(2vw, 20px);
-}
-.next-page-arrow-p:hover {
-  color: rgb(124, 108, 188);
-}
-@media (max-width: 1000px) {
-  .next-page-arrow-p {
-    margin: auto;
-    visibility: hidden;
-  }
-}
-
-.next-page-arrow-games {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: max(1vw, 15px);
-}
-.next-page-arrow-games:hover {
-  color: rgb(124, 108, 188);
-}
-
-.github-container {
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: 60px;
-  position: fixed;
-  z-index: 1;
-}
-@media (max-width: 1000px) {
-  .github-container {
-    display: none;
-    height: 0px;
-  }
-}
-.github-container .github-icon {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: max(2vw, 20px);
-  margin-left: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-.github-container .github-icon:hover {
-  transform: scale(1.2);
-}
-
 .copyright-container {
   bottom: 0;
   left: 0;
   width: 100vw;
   height: 60px;
   position: fixed;
-  z-index: 1;
+  z-index: 0f;
 }
 @media (max-width: 1000px) {
   .copyright-container {
